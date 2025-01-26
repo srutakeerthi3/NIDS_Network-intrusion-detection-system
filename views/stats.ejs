@@ -1,0 +1,420 @@
+<%-include('partials/header') %>
+
+<%-include('partials/loadhead') %>
+<body style="margin: 0; font-family: 'Arial', sans-serif; background-color: #f7f7f7; color: #333;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="main-content" style="padding: 30px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+          <h1 class="text-center" style="color: #001F3F; font-size: 28px;">BINARY-CLASS CLASSIFICATION TABLE</h1>
+          
+          <div class="table-section" style="margin-top: 30px; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+            <table class="table table-striped" style="color: #333; border-radius: 8px; border-collapse: collapse; width: 100%; position: relative;">
+              <thead>
+                <tr style="background-color: #001F3F; color: #fff;">
+                  <th scope="col"></th>
+                  <th scope="col">ALGORITHMS</th>
+                  <th scope="col">PRECISION</th>
+                  <th scope="col">RECALL</th>
+                  <th scope="col">F-1 SCORE</th>
+                  <th scope="col">SUPPORT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Normal Class -->
+                <tr>
+                  <th rowspan="4">NORMAL</th>
+                  <td>KNN</td>
+                  <td>0.97</td>
+                  <td>0.97</td>
+                  <td>0.97</td>
+                  <td>9246</td>
+                </tr>
+                <tr>
+                  <td>RANDOM FOREST</td>
+                  <td>0.99</td>
+                  <td>0.96</td>
+                  <td>0.97</td>
+                  <td>9847</td>
+                </tr>
+                <tr>
+                  <td>CNN</td>
+                  <td>0.94</td>
+                  <td>0.96</td>
+                  <td>0.95</td>
+                  <td>9217</td>
+                </tr>
+                <tr>
+                  <td>LSTM</td>
+                  <td>0.94</td>
+                  <td>0.96</td>
+                  <td>0.95</td>
+                  <td>9217</td>
+                </tr>
+                <!-- Attack Class -->
+                <tr>
+                  <th rowspan="4">ATTACK</th>
+                  <td>KNN</td>
+                  <td>0.98</td>
+                  <td>0.98</td>
+                  <td>0.98</td>
+                  <td>12169</td>
+                </tr>
+                <tr>
+                  <td>RANDOM FOREST</td>
+                  <td>0.97</td>
+                  <td>0.99</td>
+                  <td>0.98</td>
+                  <td>11928</td>
+                </tr>
+                <tr>
+                  <td>CNN</td>
+                  <td>0.97</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>12198</td>
+                </tr>
+                <tr>
+                  <td>LSTM</td>
+                  <td>0.97</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>12198</td>
+                </tr>
+                <!-- Accuracy -->
+                <tr>
+                  <th rowspan="4">ACCURACY</th>
+                  <td>KNN</td>
+                  <td></td>
+                  <td></td>
+                  <td>0.98</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>RANDOM FOREST</td>
+                  <td></td>
+                  <td></td>
+                  <td>0.97</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>CNN</td>
+                  <td></td>
+                  <td></td>
+                  <td>0.96</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>LSTM</td>
+                  <td></td>
+                  <td></td>
+                  <td>0.96</td>
+                  <td>21415</td>
+                </tr>
+                <!-- Macro Average -->
+                <tr>
+                  <th rowspan="4">MACRO AVERAGE</th>
+                  <td>KNN</td>
+                  <td>0.98</td>
+                  <td>0.98</td>
+                  <td>0.98</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>RANDOM FOREST</td>
+                  <td>0.98</td>
+                  <td>0.97</td>
+                  <td>0.97</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>CNN</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>LSTM</td>
+                  <td>0.95</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>21415</td>
+                </tr>
+                <!-- Weighted Average -->
+                <tr>
+                  <th rowspan="4">WEIGHTED AVERAGE</th>
+                  <td>KNN</td>
+                  <td>0.98</td>
+                  <td>0.98</td>
+                  <td>0.98</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>RANDOM FOREST</td>
+                  <td>0.97</td>
+                  <td>0.97</td>
+                  <td>0.97</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>CNN</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>21415</td>
+                </tr>
+                <tr>
+                  <td>LSTM</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>0.96</td>
+                  <td>21415</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h1 class="text-center" style="color: #001F3F; font-size: 28px; margin-top: 50px;">MULTI-CLASS CLASSIFICATION TABLE</h1>
+          
+          <div class="table-section" style="margin-top: 30px; padding: 20px; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+            <table class="table table-striped" style="color: #333; border-radius: 8px; border-collapse: collapse; width: 100%; position: relative;">
+              <thead>
+                <tr style="background-color: #001F3F; color: #fff;">
+                  <th scope="col"></th>
+                  <th scope="col">ALGORITHMS</th>
+                  <th scope="col">PRECISION</th>
+                  <th scope="col">RECALL</th>
+                  <th scope="col">F-1 SCORE</th>
+                  <th scope="col">SUPPORT</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- DOS Class -->
+                <tr>
+                  <th rowspan="4">DOS</th>
+                  <td>KNN</td>
+                  <td>0.99</td>
+                  <td>0.99</td>
+                  <td>0.99</td>
+                  <td>6822</td>
+                </tr>
+                <tr>
+                  <td>RANDOM FOREST</td>
+                  <td>1.00</td>
+                  <td>0.97</td>
+                  <td>0.98</td>
+                  <td>6822</td>
+                </tr>
+                <tr>
+                  <td>CNN</td>
+                  <td>0.99</td>
+                  <td>0.98</td>
+                  <td>0.98</td>
+                  <td>6822</td>
+                </tr>
+                <tr>
+                  <td>LSTM</td>
+                  <td>1.00</td>
+                  <td>0.97</td>
+                  <td>0.98</td>
+                  <td>6822</td>
+                </tr>
+                <!-- Normal Class -->
+                <tr>
+                    <th rowspan="4">NORMAL</th>
+                    <td>KNN</td>
+                    <td>0.98</td>
+                    <td>0.98</td>
+                    <td>0.98</td>
+                    <td>9246</td>
+                  </tr>
+                  <tr>
+                    <td>RANDOM FOREST</td>
+                    <td>0.98</td>
+                    <td>0.97</td>
+                    <td>0.98</td>
+                    <td>9847</td>
+                  </tr>
+                  <tr>
+                    <td>CNN</td>
+                    <td>0.96</td>
+                    <td>0.94</td>
+                    <td>0.95</td>
+                    <td>9217</td>
+                  </tr>
+                  <tr>
+                    <td>LSTM</td>
+                    <td>0.95</td>
+                    <td>0.94</td>
+                    <td>0.94</td>
+                    <td>9217</td>
+                  </tr>
+                  <!-- Probe Class -->
+                  <tr>
+                    <th rowspan="4">PROBE</th>
+                    <td>KNN</td>
+                    <td>0.94</td>
+                    <td>0.92</td>
+                    <td>0.93</td>
+                    <td>10233</td>
+                  </tr>
+                  <tr>
+                    <td>RANDOM FOREST</td>
+                    <td>0.92</td>
+                    <td>0.90</td>
+                    <td>0.91</td>
+                    <td>10428</td>
+                  </tr>
+                  <tr>
+                    <td>CNN</td>
+                    <td>0.91</td>
+                    <td>0.89</td>
+                    <td>0.90</td>
+                    <td>10627</td>
+                  </tr>
+                  <tr>
+                    <td>LSTM</td>
+                    <td>0.91</td>
+                    <td>0.90</td>
+                    <td>0.91</td>
+                    <td>10598</td>
+                  </tr>
+                  <!-- U2R Class -->
+                  <tr>
+                    <th rowspan="4">U2R</th>
+                    <td>KNN</td>
+                    <td>0.88</td>
+                    <td>0.92</td>
+                    <td>0.90</td>
+                    <td>1285</td>
+                  </tr>
+                  <tr>
+                    <td>RANDOM FOREST</td>
+                    <td>0.91</td>
+                    <td>0.94</td>
+                    <td>0.92</td>
+                    <td>1341</td>
+                  </tr>
+                  <tr>
+                    <td>CNN</td>
+                    <td>0.89</td>
+                    <td>0.87</td>
+                    <td>0.88</td>
+                    <td>1269</td>
+                  </tr>
+                  <tr>
+                    <td>LSTM</td>
+                    <td>0.90</td>
+                    <td>0.89</td>
+                    <td>0.89</td>
+                    <td>1279</td>
+                  </tr>
+                  <!-- R2L Class -->
+                  <tr>
+                    <th rowspan="4">R2L</th>
+                    <td>KNN</td>
+                    <td>0.91</td>
+                    <td>0.87</td>
+                    <td>0.89</td>
+                    <td>951</td>
+                  </tr>
+                  <tr>
+                    <td>RANDOM FOREST</td>
+                    <td>0.88</td>
+                    <td>0.85</td>
+                    <td>0.86</td>
+                    <td>991</td>
+                  </tr>
+                  <tr>
+                    <td>CNN</td>
+                    <td>0.91</td>
+                    <td>0.93</td>
+                    <td>0.92</td>
+                    <td>1032</td>
+                  </tr>
+                  <tr>
+                    <td>LSTM</td>
+                    <td>0.90</td>
+                    <td>0.88</td>
+                    <td>0.89</td>
+                    <td>987</td>
+                  </tr>
+                  <!-- Accuracy -->
+                  <tr>
+                    <th rowspan="4">ACCURACY</th>
+                    <td>KNN</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.98</td>
+                    <td>21415</td>
+                  </tr>
+                  <tr>
+                    <td>RANDOM FOREST</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.97</td>
+                    <td>21415</td>
+                  </tr>
+                  <tr>
+                    <td>CNN</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.96</td>
+                    <td>21415</td>
+                  </tr>
+                  <tr>
+                    <td>LSTM</td>
+                    <td></td>
+                    <td></td>
+                    <td>0.96</td>
+                    <td>21415</td>
+                  </tr>  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <style>
+    /* Hover Effect for Table Rows */
+    .table tbody tr:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Fixed Table Header */
+    .table-container {
+      max-height: 500px;
+      overflow-y: auto;
+    }
+    .table th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: #001F3F;
+      color: #fff;
+    }
+
+    /* Smooth Scroll for Navigation */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Box Shadows for Table Rows */
+    .table tbody tr {
+      transition: all 0.3s ease;
+    }
+
+    .table tbody tr:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+  <%- include('partials/loadfoot') %>
+</body>

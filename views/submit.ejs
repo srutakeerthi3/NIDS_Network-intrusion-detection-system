@@ -1,0 +1,114 @@
+<%- include('partials/header') %>
+
+<%- include('partials/loadhead') %>
+<body onload="myFunction()" style="margin:0; background-color: #f7f7f7;">
+
+  <!-- Container for content with shadow -->
+  <div class="container-fluid py-5" style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+    <div class="row justify-content-center">
+      
+      <!-- Card 1: Random Row Predict -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg border-0 rounded-4" style="background-color: #ffffff;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-dark">RANDOM ROW PREDICT</h5>
+            <p class="card-text text-muted">It will take a single row from validation data to predict the type of attack.</p>
+            <a href="/secrets" class="btn btn-primary px-4 py-2 rounded-3" style="background-color: #24a0ed;">Predict</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Open CSV -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg border-0 rounded-4" style="background-color: #ffffff;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-dark">OPEN CSV</h5>
+            <p class="card-text text-muted">It will take a CSV file and update the file with the type of attack for each row.</p>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+
+            <script>
+              $(document).ready(function() {
+                $('#uploadForm').submit(function() {
+                  $("#status").empty().text("File is uploading...");
+                  $(this).ajaxSubmit({
+                    error: function(xhr) {
+                      status('Error: ' + xhr.status);
+                    },
+                    success: function(response) {
+                      console.log(response);
+                      $("#status").empty().text(response);
+                    }
+                  });
+                  return false;
+                });
+              });
+            </script>
+
+            <form id="uploadForm" enctype="multipart/form-data" action="/uploadjavatpoint" method="post">
+              <div class="form-group">
+                <select name="selected_model" class="form-control mb-3">
+                  <option value="" disabled selected>Select Algorithm</option>
+                  <option value="knn">KNN - 97%</option>
+                  <option value="rf">RANDOM FOREST - 97%</option>
+                  <option value="cnn">CNN - 95%</option>
+                  <option value="lstm">LSTM - 95%</option>
+                </select>
+              </div>
+              <div class="form-group mb-3">
+                <input class="btn btn-light shadow-sm" type="file" id="f1" name="myfile" accept=".csv,.txt" onclick="myfunction_1()">
+              </div>
+              <div class="form-group">
+                <input type="submit" id="bt-1" class="btn btn-primary shadow-sm" value="Predict" name="submit" onclick="myfunction_2()" disabled>
+              </div>
+              <span id="status" class="text-muted"></span>
+            </form>
+
+            <form action="/download-file">
+              <div class="form-group mt-3">
+                <button class="btn btn-light shadow-sm" id="bt-2" type="submit" disabled>Download File</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Enter Network Parameters -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg border-0 rounded-4" style="background-color: #ffffff;">
+          <div class="card-body text-center">
+            <h5 class="card-title text-dark">Enter Network Parameters</h5>
+            <p class="card-text text-muted">It will take the network parameters from the user and predict the type of attack.</p>
+            <a href="/parameters" class="btn btn-primary px-4 py-2 rounded-3" style="background-color: #24a0ed;">Predict</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <script>
+    var myVar;
+
+    function myFunction() {
+      myVar = setTimeout(showPage, 200);
+    }
+
+    function myfunction_1() {
+      document.getElementById("bt-1").disabled = false;
+    }
+
+    function myfunction_2() {
+      setTimeout(function() {
+        document.getElementById("bt-2").disabled = false;
+      }, 10000);
+    }
+  </script>
+
+  <%- include('partials/loadfoot') %>
+
+</body>
+</html>

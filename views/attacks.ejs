@@ -1,0 +1,127 @@
+<%- include('partials/header') %>
+<%- include('partials/loadhead') %>
+
+<body onload="myFunction()" style="margin:0; font-family: 'Arial', sans-serif;">
+
+  <div id="loader"></div>
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+
+    <!-- Main Section -->
+    <section class="colored-section" id="attacks" style="background-color: #001F3F; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 50px 20px;">
+      <div class="container" style="max-width: 1200px;">
+        <h1 class="text-center text-white" style="font-size: 2.5rem; font-weight: bold; margin-bottom: 40px;">Cyber Attacks</h1>
+        <div class="row justify-content-center">
+          
+          <!-- Attack Card 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="attack-card">
+              <h3 class="card-title">Denial of Service (DoS)</h3>
+              <p class="card-text">A Denial-of-Service (DoS) attack is an attack meant to shut down a machine or network, making it inaccessible to its intended users by flooding the target with traffic or sending it crash-triggering data.</p>
+            </div>
+          </div>
+          
+          <!-- Attack Card 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="attack-card">
+              <h3 class="card-title">Probe</h3>
+              <p class="card-text">Probing is an attack where the intruder scans network devices to determine weaknesses in topology or open ports, later using these vulnerabilities for illegal access.</p>
+            </div>
+          </div>
+          
+          <!-- Attack Card 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="attack-card">
+              <h3 class="card-title">Remote to User (R2L)</h3>
+              <p class="card-text">Remote to User (R2L) is an attack where an intruder sends a set of packets to another computer or server over a network, where they don’t have local user permissions to access.</p>
+            </div>
+          </div>
+          
+          <!-- Attack Card 4 -->
+          <div class="col-md-4 mb-4">
+            <div class="attack-card">
+              <h3 class="card-title">User to Root (U2R)</h3>
+              <p class="card-text">User to Root (U2R) is an attack where an intruder starts with normal user access and, after several attempts, escalates to root-level access to control the system.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <%- include('partials/footer') %>
+  </div>
+
+  <!-- JavaScript to show the content after loading -->
+  <script>
+  var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 200);
+  }
+
+  function showPage() {
+    // Ensure the elements are available before attempting to manipulate them
+    var loader = document.getElementById("loader");
+    var myDiv = document.getElementById("myDiv");
+
+    if (loader && myDiv) {
+      loader.style.display = "none";
+      myDiv.style.display = "block";
+    }
+  }
+  </script>
+
+  <%- include('partials/loadfoot') %>
+
+  <style>
+    /* Global Styles */
+    body {
+      background-color: #f7f7f7;
+    }
+
+    .colored-section {
+      background-color: #001F3F;
+    }
+
+    /* Card Styles (Neumorphism & Glass Effect) */
+    .attack-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .attack-card:hover {
+      box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.3), -12px -12px 24px rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .card-title {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .card-text {
+      color: #f7f7f7;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 767px) {
+      .attack-card {
+        padding: 20px;
+      }
+      .card-title {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</body>
+
+</html>

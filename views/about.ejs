@@ -1,0 +1,149 @@
+<%- include('partials/header') %>
+<%- include('partials/loadhead') %>
+
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <!-- complete body without including head -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <div class="container-fluid">
+    <div class="about-section">
+        <h1>About Our System</h1>
+        <br>
+        <p><h4>Development of Network Intrusion Detection System (NIDS), with Machine Learning and Deep Learning, Recurrent Neural Network models, MERN web I/O System.</h4></p>
+        <br>
+        <p style="color: #fff;">Large numbers of businesses were affected by data infringes and Cyber -attacks due to dependency on the internet. To prevent such malicious activity, the network requires a system that detects anomalies and informs the user with alerts.</p>
+        <p style="color: #fff;">This project detects Network Intrusion anomalies by using the NSL-KDD dataset. The deep learning model Long Short-Term Memory (LSTM), a superior version of RNN (Recurrent Neural Network), and KNN (K-Nearest Neighbors) method are used for binary and multi-class classification.</p>
+        <p style="color: #fff;">The user enters the hacking parameters in the front end, which is designed using ReactJS. The model predicts the type of attack and provides information to the user. MongoDB is used for storing data, and NodeJS serves as the backend framework.</p>
+        <p style="color: #fff;">The project is fully responsive and based on session and cookies concepts. Once the user is authenticated and logged in, it will not ask for login credentials on subsequent visits. The system only requests credentials when the user clicks the logout button. Google OAuth 2.0 is used for user authentication, and user details are stored as salted hashes in MongoDB.</p>
+    </div>
+  </div>
+  
+  <br><br><br>
+  <h1 style="text-align:center; color: #fff;">Our Team</h1>
+  
+  <div class="container-fluid">
+    <div class="row" style="color: #fff; display: flex; justify-content: center;">
+      
+      <!-- Team Member 1 -->
+      <div class="card card-about text-center" style="width: 30rem; margin: 0px 20px 20px 20px; background-color: rgba(0, 31, 63, 0.8); backdrop-filter: blur(10px); border-radius: 15px; box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.1);">
+        <div class="card-body">
+          <div class="profile-img-container">
+            <img src="css/abhi.jpg" alt="Kurra Naveen Abhiram" class="profile-img">
+          </div>
+          <h4 class="card-title">Kurra Naveen Abhiram</h4>
+          <h6 class="card-title">Cyber Security</h6>
+          <p class="card-text">I am a passionate cybersecurity professional and ethical hacker with a strong background in programming, front-end development, and vulnerability assessments. I work on projects involving malware detection, network monitoring, and system integrity.</p>
+          <div class="container-fluid social-links">
+            <a href="https://abhiramkurra.github.io/Abhiram-Kurra_Portfolio/" target="_blank"><i class="social-icon fas fa-regular fa-globe fa-2x" style="color: #fff;"></i></a>
+            <a href="https://github.com/AbhiramKurra" target="_blank"><i class="social-icon fab fa-github fa-2x" style="color: #fff;"></i></a>
+            <a href="https://www.linkedin.com/in/abhiramkurra/" target="_blank"><i class="social-icon fab fa-linkedin fa-2x" style="color: #fff;"></i></a>
+            <a href="mailto:kurra.abhiram@gmail.com" target="_blank"><i class="social-icon fas fa-envelope fa-2x" style="color: #fff;"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <div class="card card-about text-center" style="width: 30rem; margin: 0px 20px 20px 20px; background-color: rgba(0, 31, 63, 0.8); backdrop-filter: blur(10px); border-radius: 15px; box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.1);">
+        <div class="card-body">
+          <div class="profile-img-container">
+            <img src="css/sruta.jpg" alt="Vishnubhatla V L Sruta Keerthi" class="profile-img">
+          </div>
+          <h4 class="card-title">Vishnubhatla V L Sruta Keerthi</h4>
+          <h6 class="card-title">AIML</h6>
+          <p class="card-text">An aspiring AI/ML engineer with expertise in machine learning and deep learning, I am pursuing a BTech in Computer Science. I focus on developing innovative solutions using Python, web development, and cybersecurity, and I am passionate about AI and continuous learning.</p>
+          <div class="container-fluid social-links">
+            <a href="https://srutakeerthi3.github.io/sruta-portfolio/" target="_blank"><i class="social-icon fas fa-regular fa-globe fa-2x" style="color: #fff;"></i></a>
+            <a href="https://github.com/srutakeerthi3" target="_blank"><i class="social-icon fab fa-github fa-2x" style="color: #fff;"></i></a>
+            <a href="https://www.linkedin.com/in/vishnubhatla-v-l-sruta-keerthi/" target="_blank"><i class="social-icon fab fa-linkedin fa-2x" style="color: #fff;"></i></a>
+            <a href="mailto:drvvlsrutakeerthi3@gmail.com" target="_blank"><i class="social-icon fas fa-envelope fa-2x" style="color: #fff;"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 200);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+
+<%- include('partials/loadfoot') %>
+
+<!-- Styles for Modern Layout -->
+<style>
+  .about-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .about-section p {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.8;
+  }
+
+  /* Team Section */
+  .card-about {
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);  /* Glassmorphism effect */
+    background: rgba(0, 31, 63, 0.8);  /* Dark semi-transparent background */
+  }
+
+  .card-about:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  }
+
+  .profile-img-container {
+    position: relative;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .social-links a {
+    margin: 10px;
+    transition: transform 0.2s ease;
+  }
+
+  .social-links a:hover {
+    transform: scale(1.2);
+  }
+
+  .about-section {
+    padding: 40px;
+    background-color: rgba(0, 31, 63, 0.9);  /* Slightly transparent dark background */
+    border-radius: 15px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.1);
+  }
+</style>
+
+</body>
+</html>
